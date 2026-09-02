@@ -27,16 +27,12 @@ func main() {
 	var b float64
 	var operator string
 
-	// 输入第一个数字
 	fmt.Println("请输入第一个数字")
 	fmt.Scan(&a)
-	// 输入
 	fmt.Println("请输入运算符")
 	fmt.Scan(&operator)
 	fmt.Println("请输入第二个数字")
-	// 根据 operator 计算结果
 	fmt.Scan(&b)
-	// 输出结果
 	result := Operate(a, b, operator)
 
 	fmt.Print("结果为：", result)
