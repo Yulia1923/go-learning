@@ -1,0 +1,22 @@
+syntax = "proto3";
+package user;
+
+option go_package = "go-learning/day36/userpb";
+//message：定义消息
+message GetUserRequest {
+    int64 id = 1;
+}//表示请求消息中有一个id字段
+
+message GetUserResponse {
+	int64 id = 1;
+	string name = 2;
+}//表示服务端返回用户ID和姓名
+
+//service：定义服务
+service UserService {
+	rpc GetUser (GetUserRequest) returns (GetUserResponse);
+}//只声明接口，还没有真正查询用户、启动服务器
+//UserService:服务名称
+//GetUser:远程调用的方法名称，rpc声明这是一个远程过程调用方法
+//GetUserRequest:请求的数据类型，GetUserResponse:响应的数据类型
+
